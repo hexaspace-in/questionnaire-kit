@@ -1,0 +1,544 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "step": 1,
+      "title": "Which room matters most to you?",
+      "subtitle": "Pick the space you'd design first",
+      "type": "single",
+      "options": [
+        {
+          "id": "living",
+          "label": "Living Room",
+          "tags": [
+            "social",
+            "open"
+          ]
+        },
+        {
+          "id": "bedroom",
+          "label": "Bedroom",
+          "tags": [
+            "private",
+            "calm"
+          ]
+        },
+        {
+          "id": "kitchen",
+          "label": "Kitchen",
+          "tags": [
+            "functional",
+            "cooking"
+          ]
+        },
+        {
+          "id": "office",
+          "label": "Home Office",
+          "tags": [
+            "focus",
+            "productive"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "step": 2,
+      "title": "Which color palette speaks to you?",
+      "subtitle": "Trust your first instinct",
+      "type": "single",
+      "options": [
+        {
+          "id": "neutral",
+          "label": "Warm Neutrals",
+          "colors": [
+            "#F5F0EB",
+            "#D4C4B0",
+            "#8B7355",
+            "#4A3728"
+          ],
+          "tags": [
+            "warm",
+            "earthy"
+          ]
+        },
+        {
+          "id": "monochrome",
+          "label": "Monochrome",
+          "colors": [
+            "#FFFFFF",
+            "#C0C0C0",
+            "#555555",
+            "#1A1A1A"
+          ],
+          "tags": [
+            "modern",
+            "clean"
+          ]
+        },
+        {
+          "id": "coastal",
+          "label": "Ocean & Sand",
+          "colors": [
+            "#F0F4F8",
+            "#87CEEB",
+            "#2E86AB",
+            "#D4A574"
+          ],
+          "tags": [
+            "airy",
+            "fresh"
+          ]
+        },
+        {
+          "id": "jewel",
+          "label": "Rich Jewel Tones",
+          "colors": [
+            "#2D1B4E",
+            "#8B2252",
+            "#C19A6B",
+            "#1B4D3E"
+          ],
+          "tags": [
+            "bold",
+            "luxury"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "step": 3,
+      "title": "Touch & texture — what draws you in?",
+      "subtitle": "Pick the material you'd love to feel",
+      "type": "single",
+      "options": [
+        {
+          "id": "wood",
+          "label": "Natural Wood",
+          "tags": [
+            "organic",
+            "warm"
+          ]
+        },
+        {
+          "id": "marble",
+          "label": "Marble & Stone",
+          "tags": [
+            "luxury",
+            "cool"
+          ]
+        },
+        {
+          "id": "metal",
+          "label": "Metal & Glass",
+          "tags": [
+            "industrial",
+            "modern"
+          ]
+        },
+        {
+          "id": "fabric",
+          "label": "Soft Fabrics",
+          "tags": [
+            "cozy",
+            "textured"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "step": 4,
+      "title": "Which furniture shape do you prefer?",
+      "subtitle": "Form follows function — and feeling",
+      "type": "single",
+      "options": [
+        {
+          "id": "curved",
+          "label": "Soft & Curved",
+          "tags": [
+            "organic",
+            "inviting"
+          ]
+        },
+        {
+          "id": "angular",
+          "label": "Clean & Angular",
+          "tags": [
+            "modern",
+            "structured"
+          ]
+        },
+        {
+          "id": "mixed",
+          "label": "Eclectic Mix",
+          "tags": [
+            "bohemian",
+            "layered"
+          ]
+        },
+        {
+          "id": "minimal",
+          "label": "Low & Minimal",
+          "tags": [
+            "zen",
+            "minimal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "step": 5,
+      "title": "How do you live at home?",
+      "subtitle": "Your lifestyle shapes your space",
+      "type": "single",
+      "options": [
+        {
+          "id": "entertainer",
+          "label": "I love hosting guests",
+          "tags": [
+            "social",
+            "open-plan"
+          ]
+        },
+        {
+          "id": "homebody",
+          "label": "My home is my retreat",
+          "tags": [
+            "cozy",
+            "private"
+          ]
+        },
+        {
+          "id": "family",
+          "label": "Kids & pets run the show",
+          "tags": [
+            "durable",
+            "functional"
+          ]
+        },
+        {
+          "id": "creative",
+          "label": "I need space to create",
+          "tags": [
+            "flexible",
+            "inspiring"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "step": 6,
+      "title": "What's your budget comfort zone?",
+      "subtitle": "Helps us match the right tier for you",
+      "type": "single",
+      "options": [
+        {
+          "id": "essential",
+          "label": "Smart & Essential",
+          "desc": "Best value, great quality",
+          "price": "Under 5L",
+          "tags": [
+            "essential"
+          ]
+        },
+        {
+          "id": "premium",
+          "label": "Premium Comfort",
+          "desc": "Upgraded materials & finishes",
+          "price": "5L – 10L",
+          "tags": [
+            "premium"
+          ]
+        },
+        {
+          "id": "luxury",
+          "label": "Luxury Living",
+          "desc": "Top-tier everything",
+          "price": "10L+",
+          "tags": [
+            "luxury"
+          ]
+        }
+      ]
+    }
+  ],
+  "profiles": {
+    "modern-minimalist": {
+      "id": "modern-minimalist",
+      "name": "Modern Minimalist",
+      "tagline": "Less is more — and it looks stunning.",
+      "description": "You gravitate toward clean lines, neutral palettes, and spaces that breathe. Every piece in your home has a purpose, and clutter is your nemesis. You appreciate quality over quantity and believe a well-designed room needs fewer elements, not more.",
+      "key_traits": [
+        "Clean lines",
+        "Neutral tones",
+        "Functional beauty",
+        "Open space"
+      ],
+      "materials": [
+        "White oak wood",
+        "Matte laminates",
+        "Frosted glass",
+        "Brushed steel"
+      ],
+      "color_palette": [
+        "#FFFFFF",
+        "#F5F5F5",
+        "#9CA3AF",
+        "#1F1F1F"
+      ]
+    },
+    "warm-contemporary": {
+      "id": "warm-contemporary",
+      "name": "Warm Contemporary",
+      "tagline": "Modern comfort with a soul.",
+      "description": "You love modern design but need warmth. Think soft neutrals, natural wood, textured fabrics, and ambient lighting. Your spaces feel curated yet lived-in — sophisticated but never cold. Scandinavian meets contemporary with a warm twist.",
+      "key_traits": [
+        "Warm neutrals",
+        "Natural textures",
+        "Layered comfort",
+        "Ambient light"
+      ],
+      "materials": [
+        "Walnut veneer",
+        "Linen upholstery",
+        "Travertine",
+        "Brass accents"
+      ],
+      "color_palette": [
+        "#F5F0EB",
+        "#D4C4B0",
+        "#8B7355",
+        "#4A3728"
+      ]
+    },
+    "industrial-chic": {
+      "id": "industrial-chic",
+      "name": "Industrial Chic",
+      "tagline": "Raw beauty, refined living.",
+      "description": "You're drawn to exposed materials, honest construction, and urban edge. Metal, concrete, and reclaimed wood are your vocabulary. Your ideal space looks like it was once a loft or factory — but with surprisingly comfortable furniture and curated art.",
+      "key_traits": [
+        "Exposed materials",
+        "Metal accents",
+        "Urban edge",
+        "Raw textures"
+      ],
+      "materials": [
+        "Black steel",
+        "Concrete",
+        "Reclaimed wood",
+        "Toughened glass"
+      ],
+      "color_palette": [
+        "#2C2C2C",
+        "#555555",
+        "#8B7355",
+        "#C0C0C0"
+      ]
+    },
+    "bohemian-eclectic": {
+      "id": "bohemian-eclectic",
+      "name": "Bohemian Eclectic",
+      "tagline": "Rules? What rules?",
+      "description": "You love mixing patterns, textures, and eras. Your space tells a story — collected, layered, and deeply personal. Every piece has meaning, and matching sets bore you. You thrive in color, warmth, and a touch of intentional chaos.",
+      "key_traits": [
+        "Mixed patterns",
+        "Layered textures",
+        "Global influences",
+        "Personal story"
+      ],
+      "materials": [
+        "Jute & rattan",
+        "Hand-woven textiles",
+        "Terracotta",
+        "Macrame"
+      ],
+      "color_palette": [
+        "#C19A6B",
+        "#8B4513",
+        "#2E8B57",
+        "#CD853F"
+      ]
+    },
+    "luxury-classic": {
+      "id": "luxury-classic",
+      "name": "Luxury Classic",
+      "tagline": "Timeless elegance, no compromise.",
+      "description": "You appreciate craftsmanship, premium materials, and spaces that feel like a five-star experience. Rich jewel tones, marble surfaces, gold accents, and statement lighting define your world. Every detail is considered and nothing is accidental.",
+      "key_traits": [
+        "Premium materials",
+        "Rich tones",
+        "Statement pieces",
+        "Curated elegance"
+      ],
+      "materials": [
+        "Italian marble",
+        "Gold hardware",
+        "Velvet upholstery",
+        "Crystal lighting"
+      ],
+      "color_palette": [
+        "#2D1B4E",
+        "#8B2252",
+        "#C19A6B",
+        "#1B4D3E"
+      ]
+    },
+    "japandi-zen": {
+      "id": "japandi-zen",
+      "name": "Japandi Zen",
+      "tagline": "Simplicity as a philosophy.",
+      "description": "You seek tranquility through design. Japanese minimalism meets Scandinavian function — low furniture, natural materials, muted palettes, and intentional negative space. Your home is a sanctuary of calm and mindful living.",
+      "key_traits": [
+        "Low profiles",
+        "Natural materials",
+        "Muted palette",
+        "Negative space"
+      ],
+      "materials": [
+        "Light ash wood",
+        "Paper screens",
+        "Linen",
+        "Bamboo"
+      ],
+      "color_palette": [
+        "#F5F0EB",
+        "#C4B9A8",
+        "#6B7355",
+        "#3D3D3D"
+      ]
+    }
+  },
+  "tag_map": {
+    "modern": [
+      "modern-minimalist",
+      "warm-contemporary"
+    ],
+    "clean": [
+      "modern-minimalist",
+      "japandi-zen"
+    ],
+    "warm": [
+      "warm-contemporary",
+      "bohemian-eclectic"
+    ],
+    "earthy": [
+      "warm-contemporary",
+      "bohemian-eclectic"
+    ],
+    "airy": [
+      "modern-minimalist",
+      "japandi-zen"
+    ],
+    "fresh": [
+      "modern-minimalist",
+      "warm-contemporary"
+    ],
+    "bold": [
+      "luxury-classic",
+      "industrial-chic"
+    ],
+    "luxury": [
+      "luxury-classic"
+    ],
+    "organic": [
+      "warm-contemporary",
+      "japandi-zen"
+    ],
+    "cool": [
+      "modern-minimalist",
+      "industrial-chic"
+    ],
+    "industrial": [
+      "industrial-chic"
+    ],
+    "cozy": [
+      "warm-contemporary",
+      "bohemian-eclectic"
+    ],
+    "textured": [
+      "bohemian-eclectic",
+      "warm-contemporary"
+    ],
+    "inviting": [
+      "warm-contemporary",
+      "bohemian-eclectic"
+    ],
+    "structured": [
+      "modern-minimalist",
+      "industrial-chic"
+    ],
+    "bohemian": [
+      "bohemian-eclectic"
+    ],
+    "layered": [
+      "bohemian-eclectic"
+    ],
+    "zen": [
+      "japandi-zen"
+    ],
+    "minimal": [
+      "modern-minimalist",
+      "japandi-zen"
+    ],
+    "social": [
+      "warm-contemporary",
+      "luxury-classic"
+    ],
+    "private": [
+      "japandi-zen",
+      "modern-minimalist"
+    ],
+    "durable": [
+      "industrial-chic",
+      "warm-contemporary"
+    ],
+    "functional": [
+      "modern-minimalist",
+      "industrial-chic"
+    ],
+    "flexible": [
+      "bohemian-eclectic",
+      "warm-contemporary"
+    ],
+    "inspiring": [
+      "bohemian-eclectic",
+      "luxury-classic"
+    ],
+    "essential": [
+      "modern-minimalist",
+      "warm-contemporary"
+    ],
+    "premium": [
+      "warm-contemporary",
+      "industrial-chic"
+    ],
+    "open-plan": [
+      "modern-minimalist",
+      "warm-contemporary"
+    ],
+    "open": [
+      "modern-minimalist",
+      "japandi-zen"
+    ],
+    "calm": [
+      "japandi-zen",
+      "warm-contemporary"
+    ],
+    "cooking": [
+      "warm-contemporary",
+      "industrial-chic"
+    ],
+    "focus": [
+      "modern-minimalist",
+      "japandi-zen"
+    ],
+    "productive": [
+      "modern-minimalist",
+      "industrial-chic"
+    ]
+  }
+}

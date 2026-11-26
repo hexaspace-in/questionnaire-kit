@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "questionnaire-kit"
+version = "0.1.0"
+description = "Client questionnaires for Python apps (conditional questions, answer cleaning, required checks, summaries) plus an interior design style quiz."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Hexaspace" }]
+keywords = ["questionnaire", "forms", "survey", "conditional logic", "interior design", "style quiz", "intake"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/questionnaire_kit"]
