@@ -1,6 +1,6 @@
 import pytest
 
-from questionnaire_kit import QuestionError, check_questions, clean_answers, quiz_data, score_style, summary_rows
+from questionnaire_kit import QuestionError, check_questions, clean_answers, quiz_data, score_style, summary_rows, visible
 
 SECTIONS = [{"title": "Home", "questions": [
     {"id": "type", "label": "Home type", "type": "single", "required": True, "options": [{"label": "Flat"}, {"label": "Villa"}]},
@@ -33,3 +33,33 @@ def test_style_quiz():
     first = d["questions"][0]["options"][1]                       # Bedroom: private, calm
     r = score_style([first, first])
     assert r["primary"] in d["profiles"] and r["profile"]["name"]
+
+
+def test_any_of_visibility_and_required_answers():
+    condition = {"id": "floors", "label": "Floors", "type": "number", "required": True,
+                 "show_if": {"q": "type", "any_of": ["Villa", "Penthouse"]}}
+    sections = [{"questions": [SECTIONS[0]["questions"][0], condition]}]
+    check_questions(sections)
+    for answer in ("Villa", "Penthouse", ["Flat", "Villa"]):
+        assert visible(condition, {"type": answer})
+    for answer in ("Flat", ["Flat"], []):
+        assert not visible(condition, {"type": answer})
+    assert not visible(condition, {})
+    assert clean_answers(sections, {"type": "Flat", "floors": 2}, final=True) == {"type": "Flat"}
+    with pytest.raises(QuestionError, match="Floors"):
+        clean_answers(sections, {"type": "Villa"}, final=True)
+    assert clean_answers(sections, {"type": "Villa", "floors": 2}, final=True)["floors"] == 2.0
+
+
+@pytest.mark.parametrize("condition", [
+    {"q": "type", "any_of": "Villa"},
+    {"q": "type", "any_of": []},
+    {"q": "type", "any_of": ["Villa"], "equals": "Villa"},
+    {"q": "type"},
+    {"q": "later", "any_of": ["Villa"]},
+])
+def test_bad_any_of_conditions(condition):
+    sections = [{"questions": [SECTIONS[0]["questions"][0],
+                              {"id": "floors", "label": "Floors", "show_if": condition}]}]
+    with pytest.raises(QuestionError):
+        check_questions(sections)
