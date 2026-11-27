@@ -4,7 +4,7 @@ Client questionnaires for Python apps, plus an interior-design style quiz.
 
 **Form engine** (any domain: client intake, site surveys, onboarding):
 - Sections of questions in 10 types: short and long text, single and multiple choice, picture choice (photo or colour swatch), rating 1–5, dropdown, number, date, and photo upload
-- **"Show only if"** logic: show a question only when an earlier answer matches
+- **"Show only if"** logic: show a question only when an earlier answer matches `{"q": "type", "equals": "Villa"}` or any value in `{"q": "type", "any_of": ["Villa", "Penthouse"]}`. A multi-choice answer matches if at least one selected value matches. Use one operator per condition and a non-empty list for `any_of`.
 - `check_questions()` validates a form: unique ids, at least 2 options for choices, conditions point back to earlier questions
 - `clean_answers()` keeps only valid answers, drops answers to hidden questions, and on submit lists the required questions still unanswered
 - `summary_rows()` gives (section, question, answer) rows for a PDF, an email or a CRM note

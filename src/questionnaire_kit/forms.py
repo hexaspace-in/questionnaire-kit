@@ -1,7 +1,7 @@
 """Form engine: sections of questions, "show only if" logic, answer cleaning, required checks, summary rows.
 
 A question is a dict: {"id", "label", "type", "help"?, "required"?, "options"?: [{"label", "image"?, "swatch"?}],
-"multi_image"?, "show_if"?: {"q": earlier_id, "equals": value}}.
+"multi_image"?, "show_if"?: {"q": earlier_id, "equals": value} or {"q": earlier_id, "any_of": [values]}}.
 Types: short, long, single, multi, image (picture choice), rating (1-5), dropdown, number, date, photo (file ids).
 """
 from typing import Dict, List, Optional
@@ -39,8 +39,14 @@ def check_questions(sections: List[dict]) -> None:
                 raise QuestionError(f"Two questions use the id {q['id']}")
             if q["type"] in CHOICE and len(q.get("options") or []) < 2:
                 raise QuestionError(f"“{q['label']}” needs at least 2 options")
-            if q.get("show_if") and q["show_if"]["q"] not in seen:
-                raise QuestionError(f"“{q['label']}”: 'show only if' must point to an earlier question")
+            condition = q.get("show_if")
+            if condition:
+                if not isinstance(condition, dict) or condition.get("q") not in seen:
+                    raise QuestionError(f"“{q['label']}”: 'show only if' must point to an earlier question")
+                if ("equals" in condition) == ("any_of" in condition):
+                    raise QuestionError(f"“{q['label']}”: 'show only if' needs exactly one of equals or any_of")
+                if "any_of" in condition and (not isinstance(condition["any_of"], list) or not condition["any_of"]):
+                    raise QuestionError(f"“{q['label']}”: 'any_of' must be a non-empty list")
             seen[q["id"]] = q
 
 
@@ -49,7 +55,8 @@ def visible(q: dict, answers: dict) -> bool:
     if not c:
         return True
     a = answers.get(c["q"])
-    return c["equals"] in a if isinstance(a, list) else a == c["equals"]
+    values = c["any_of"] if "any_of" in c else [c["equals"]]
+    return any(value in a for value in values) if isinstance(a, list) else a in values
 
 
 def clean_answers(sections: List[dict], answers: dict, final: bool, uploads: Optional[Dict[str, str]] = None) -> dict:
