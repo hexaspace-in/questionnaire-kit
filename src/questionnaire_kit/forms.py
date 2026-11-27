@@ -36,11 +36,11 @@ def check_questions(sections: List[dict]) -> None:
         for raw in s.get("questions") or []:
             q = _question(raw)
             if q["id"] in seen:
-                raise QuestionError(f"Two questions use the id {q["id"]}")
+                raise QuestionError(f"Two questions use the id {q['id']}")
             if q["type"] in CHOICE and len(q.get("options") or []) < 2:
-                raise QuestionError(f"“{q["label"]}” needs at least 2 options")
+                raise QuestionError(f"“{q['label']}” needs at least 2 options")
             if q.get("show_if") and q["show_if"]["q"] not in seen:
-                raise QuestionError(f"“{q["label"]}”: 'show only if' must point to an earlier question")
+                raise QuestionError(f"“{q['label']}”: 'show only if' must point to an earlier question")
             seen[q["id"]] = q
 
 
